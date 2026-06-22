@@ -144,8 +144,8 @@ h1 em{color:var(--navy);font-style:italic}
 .btn-ghost:hover{background:var(--navy-light)}
 
 /* SECTIONS */
-section{padding-bottom:6rem}
-section+section{border-top:1px solid var(--border);padding-top:6rem}
+section{padding-bottom:3.5rem}
+section+section{border-top:1px solid var(--border);padding-top:3.5rem}
 .section-label{
   font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
   color:var(--navy);font-weight:500;margin-bottom:1.5rem;
@@ -243,14 +243,23 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
 }
 
 @media(max-width:768px){
-  .sidebar{width:100%;min-height:auto;flex-direction:row;align-items:center;justify-content:space-between;padding:1rem 1.5rem;position:relative}
-  .sidebar.collapsed{width:100%}
-  .sidebar-identity,.avail,.sidebar-bottom{display:none}
-  .sidebar-nav{flex-direction:row;gap:0.4rem;margin-bottom:0}
-  .sidebar-nav a{font-size:11px;padding:0.4rem 0.6rem}
-  .nav-label{opacity:1 !important}
-  .toggle-btn{display:none}
-  .main{margin-left:0 !important;padding:2.5rem 1.5rem}
+  body{flex-direction:column}
+  .sidebar{
+    position:fixed;top:0;left:0;right:0;bottom:auto;
+    width:100% !important;min-height:auto;
+    flex-direction:row;align-items:center;
+    padding:0 1.25rem;height:54px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .sidebar-identity,.avail,.sidebar-bottom,.toggle-btn{display:none}
+  .sidebar-nav{flex-direction:row;gap:0;width:100%;justify-content:space-around}
+  .sidebar-nav a{
+    font-size:10px;padding:0.5rem 0.4rem;
+    flex-direction:column;gap:3px;align-items:center;
+  }
+  .nav-icon{font-size:17px;width:auto}
+  .nav-label{opacity:1 !important;font-size:10px}
+  .main{margin-left:0 !important;padding:5rem 1.25rem 3rem}
 }
 </style>
 </head>
