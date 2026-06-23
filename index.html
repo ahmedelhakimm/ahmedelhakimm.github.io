@@ -382,6 +382,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
       </div>
     </div>
   </section>
+  <section id="projects">
     <div class="section-label reveal">Projects</div>
     <div class="projects-grid">
       <div class="project-card reveal" onclick="window.open('https://github.com/ahmedelhakimm/My-Bachelor-Thesis','_blank')">
@@ -536,7 +537,7 @@ const io = new IntersectionObserver((entries) => {
       if (active) active.classList.add('active');
     }
   });
-}, {threshold: 0.4});
+}, {threshold: 0.1, rootMargin: '0px 0px -60% 0px'});
 sections.forEach(s => io.observe(s));
 </script>
 
