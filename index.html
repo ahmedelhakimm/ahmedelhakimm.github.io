@@ -22,6 +22,17 @@
   --sidebar-collapsed:64px;
   --transition:0.3s cubic-bezier(0.4,0,0.2,1);
 }
+html.dark{
+  --navy:#4a7fd4;
+  --navy-dark:#1a1a2e;
+  --navy-light:#1e2a3a;
+  --navy-mid:#4a7fd4;
+  --text:#e8e8e8;
+  --muted:#9a9a9a;
+  --border:#2a2a3a;
+  --bg:#0f0f17;
+  --card:#1a1a2a;
+}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;display:flex;min-height:100vh}
 
@@ -290,13 +301,20 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
   .project-card{padding:1.25rem}
   .skills-wrap{padding:1.5rem}
   .contact-link{padding:0.85rem 1rem}
+  #darkToggleMobile{display:flex !important}
 }
 </style>
 </head>
 <body>
 
 <aside class="sidebar" id="sidebar">
-  <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">&#x2630;</button>
+  <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">&#x2630;</button>
+    <button id="darkToggleMobile" aria-label="Toggle dark mode" style="background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.5);width:36px;height:36px;border-radius:8px;cursor:pointer;display:none;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;margin-right:0.75rem;">
+      <svg id="iconSunMobile" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="iconMoonMobile" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
 
   <div class="sidebar-identity">
 
@@ -326,6 +344,10 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
   </nav>
 
   <div class="sidebar-bottom">
+    <button id="darkToggle" aria-label="Toggle dark mode" style="background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.5);width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;transition:background 0.2s,color 0.2s;">
+      <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
     <a href="https://github.com/ahmedelhakimm" class="sidebar-link" target="_blank">GitHub</a>
     <a href="https://linkedin.com/in/ahmed-elhakimm" class="sidebar-link" target="_blank">LinkedIn</a>
     <a href="mailto:ahmedelhakim999@gmail.com" class="sidebar-link">Email</a>
@@ -567,6 +589,32 @@ const io = new IntersectionObserver((entries) => {
   });
 }, {threshold: 0.1, rootMargin: '0px 0px -60% 0px'});
 sections.forEach(s => io.observe(s));
+
+const darkToggle = document.getElementById('darkToggle');
+const darkToggleMobile = document.getElementById('darkToggleMobile');
+const iconSun = document.getElementById('iconSun');
+const iconMoon = document.getElementById('iconMoon');
+const iconSunMobile = document.getElementById('iconSunMobile');
+const iconMoonMobile = document.getElementById('iconMoonMobile');
+const html = document.documentElement;
+
+function applyDark(isDark) {
+  isDark ? html.classList.add('dark') : html.classList.remove('dark');
+  iconSun.style.display = isDark ? 'none' : 'block';
+  iconMoon.style.display = isDark ? 'block' : 'none';
+  iconSunMobile.style.display = isDark ? 'none' : 'block';
+  iconMoonMobile.style.display = isDark ? 'block' : 'none';
+}
+
+applyDark(localStorage.getItem('dark') === 'true');
+
+[darkToggle, darkToggleMobile].forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isDark = !html.classList.contains('dark');
+    applyDark(isDark);
+    localStorage.setItem('dark', isDark);
+  });
+});
 </script>
 
 </body>
