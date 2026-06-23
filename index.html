@@ -218,11 +218,14 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.9rem}
 .tag{font-size:11px;padding:3px 10px;background:var(--navy-light);color:var(--navy);border-radius:99px;font-weight:500}
 .read-thesis{
-  display:inline-flex;align-items:center;gap:5px;margin-top:0.9rem;
+  display:inline-flex;align-items:center;gap:6px;margin-top:1rem;
   font-size:12px;color:var(--navy);text-decoration:none;font-weight:500;
-  border-bottom:1px solid var(--navy);padding-bottom:1px;width:fit-content;
+  background:var(--navy-light);
+  border:1.5px solid var(--navy);
+  padding:6px 14px;border-radius:6px;width:fit-content;
+  transition:background 0.2s,color 0.2s;
 }
-.read-thesis:hover{opacity:0.7}
+.read-thesis:hover{background:var(--navy);color:#fff}
 
 /* SKILLS */
 .skills-wrap{background:var(--navy-dark);border-radius:16px;padding:2.5rem}
@@ -440,7 +443,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
             <span class="tag">Salesforce</span>
             <span class="tag">Enterprise AI</span>
           </div>
-          <a href="https://raw.githubusercontent.com/ahmedelhakimm/ahmedelhakimm.github.io/main/Bachelor%20Thesis%20Document.pdf" target="_blank" download onclick="event.stopPropagation()" class="read-thesis">Read thesis ↓</a>
+          <a href="https://raw.githubusercontent.com/ahmedelhakimm/ahmedelhakimm.github.io/main/Bachelor%20Thesis%20Document.pdf" target="_blank" download onclick="event.stopPropagation()" class="read-thesis">Read thesis</a>
         </div>
         <div class="project-arrow">&#x2197;&#xFE0E;</div>
       </div>
