@@ -55,9 +55,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
   width:36px;height:36px;border-radius:8px;
   background:rgba(255,255,255,0.08);border:none;
   color:rgba(255,255,255,0.6);cursor:pointer;
-  margin-bottom:1.5rem;flex-shrink:0;align-self:flex-start;
+  margin-bottom:1.5rem;flex-shrink:0;
   transition:background 0.2s,color 0.2s;
   font-size:18px;line-height:1;
+  position:relative;z-index:10;
+}
+.sidebar.collapsed .toggle-btn{
+  align-self:center;
+  margin-left:auto;
+  margin-right:auto;
 }
 .toggle-btn:hover{background:rgba(255,255,255,0.15);color:#fff}
 
@@ -65,9 +71,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
   padding:0 0.5rem;
   margin-bottom:2rem;
   white-space:nowrap;
+  overflow:hidden;
   transition:opacity var(--transition);
 }
-.sidebar.collapsed .sidebar-identity{opacity:0;pointer-events:none}
+.sidebar.collapsed .sidebar-identity{opacity:0;pointer-events:none;visibility:hidden}
 .sidebar-name{
   font-family:'DM Serif Display',serif;
   font-size:1.25rem;color:#fff;
@@ -311,6 +318,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
   .skills-wrap{padding:1.5rem}
   .contact-link{padding:0.85rem 1rem}
   #darkToggleMobile{display:flex !important}
+  .mobile-name{display:block !important}
 }
 </style>
 </head>
@@ -318,7 +326,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
 
 <aside class="sidebar" id="sidebar">
   <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
-    <span style="font-family:'DM Serif Display',serif;font-size:16px;color:#fff;padding-left:0.25rem;">Ahmed Elhakim</span>
+    <span class="mobile-name" style="font-family:'DM Serif Display',serif;font-size:16px;color:#fff;padding-left:0.25rem;display:none;">Ahmed Elhakim</span>
     <div style="display:flex;align-items:center;gap:0.5rem">
     <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">&#x2630;</button>
     <button id="darkToggleMobile" aria-label="Toggle dark mode" style="background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.5);width:36px;height:36px;border-radius:8px;cursor:pointer;display:none;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;">
