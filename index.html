@@ -85,8 +85,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
   display:flex;align-items:center;gap:12px;
   white-space:nowrap;overflow:hidden;
 }
-.nav-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center}
 .nav-label{transition:opacity var(--transition)}
+.sidebar.collapsed .nav-label{opacity:0;width:0;overflow:hidden}
+.sidebar-nav a::before{
+  content:attr(data-short);
+  position:absolute;left:0;right:0;
+  font-size:11px;font-weight:500;letter-spacing:0.04em;
+  text-align:center;color:rgba(255,255,255,0.5);
+  transition:opacity var(--transition);
+  opacity:0;
+}
+.sidebar.collapsed .sidebar-nav a::before{opacity:1}
+.sidebar.collapsed .sidebar-nav a{justify-content:center;padding:0.65rem 0}
 .sidebar.collapsed .nav-label{opacity:0}
 .sidebar-nav a:hover,.sidebar-nav a.active{color:#fff;background:rgba(255,255,255,0.08)}
 .sidebar-nav a.active .nav-icon{color:#6ee7b7}
@@ -283,24 +293,22 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
   <div class="avail"><span class="dot"></span> Open to opportunities</div>
 
   <nav class="sidebar-nav">
-    <a href="#home" data-label="Home">
-      <span class="nav-icon">&#8962;</span>
+    <a href="#home" data-label="Home" data-short="HM">
       <span class="nav-label">Home</span>
     </a>
-    <a href="#about" data-label="About">
-      <span class="nav-icon">&#9998;</span>
+    <a href="#about" data-label="About" data-short="AB">
       <span class="nav-label">About</span>
     </a>
-    <a href="#projects" data-label="Projects">
-      <span class="nav-icon">&#10697;</span>
+    <a href="#experience" data-label="Experience" data-short="EX">
+      <span class="nav-label">Experience</span>
+    </a>
+    <a href="#projects" data-label="Projects" data-short="PR">
       <span class="nav-label">Projects</span>
     </a>
-    <a href="#skills" data-label="Skills">
-      <span class="nav-icon">&#9670;</span>
+    <a href="#skills" data-label="Skills" data-short="SK">
       <span class="nav-label">Skills</span>
     </a>
-    <a href="#contact" data-label="Contact">
-      <span class="nav-icon">&#9993;</span>
+    <a href="#contact" data-label="Contact" data-short="CT">
       <span class="nav-label">Contact</span>
     </a>
   </nav>
@@ -348,7 +356,32 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
     </div>
   </section>
 
-  <section id="projects">
+  <section id="experience">
+    <div class="reveal">
+      <div class="section-label">Experience</div>
+      <div style="border:1px solid var(--border);border-radius:14px;padding:1.75rem 2rem;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem">
+          <div>
+            <h3 style="font-size:16px;font-weight:500;margin-bottom:0.2rem">Data Science Intern</h3>
+            <p style="font-size:14px;color:var(--navy);font-weight:500">Masarat Misr</p>
+          </div>
+          <span style="font-size:12px;color:var(--muted);letter-spacing:0.04em;white-space:nowrap">Jul 2025 – Sep 2025</span>
+        </div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:1rem">Contributed to the design and development of an internal HR system from the ground up — covering employee leave management, overtime tracking, fingerprint reader data integration, and an approval/rejection workflow for employee requests. Built executive dashboards surfacing HR KPIs for leadership.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem">
+          <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--navy);margin-top:2px">→</span>Designed relational database schemas for HR operations including leave cycles, overtime rules, and fingerprint attendance data</li>
+          <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--navy);margin-top:2px">→</span>Wrote optimized SQL queries for reporting, data extraction, and supporting business logic in the HR system</li>
+          <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--navy);margin-top:2px">→</span>Developed Power BI dashboards to visualize KPIs and HR metrics for executive reporting</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">Database Design</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">HR Systems</span>
+        </div>
+      </div>
+    </div>
+  </section>
     <div class="section-label reveal">Projects</div>
     <div class="projects-grid">
       <div class="project-card reveal" onclick="window.open('https://github.com/ahmedelhakimm/My-Bachelor-Thesis','_blank')">
@@ -408,6 +441,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
               <li>Python</li>
               <li>Java</li>
               <li>SQL</li>
+              <li>C#</li>
               <li>HTML / CSS</li>
             </ul>
           </div>
@@ -416,25 +450,29 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
             <ul>
               <li>Machine Learning</li>
               <li>Data Analysis</li>
+              <li>Power BI</li>
               <li>Google Gemini API</li>
-              <li>Jupyter</li>
+              <li>Pandas / NumPy</li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Technologies</h3>
             <ul>
+              <li>SQL Server</li>
               <li>Salesforce</li>
               <li>REST APIs</li>
               <li>Git & GitHub</li>
+              <li>Jira</li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Concepts</h3>
             <ul>
-              <li>ERP systems</li>
-              <li>AI integration</li>
-              <li>Data structures</li>
-              <li>Business analysis</li>
+              <li>Database Design</li>
+              <li>ERP Systems</li>
+              <li>AI Integration</li>
+              <li>Digital Transformation</li>
+              <li>Business Analysis</li>
             </ul>
           </div>
         </div>
