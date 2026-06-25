@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Ahmed Elhakim</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#1e3a6e;
-  --navy-dark:#122548;
-  --navy-light:#eef2f9;
-  --navy-mid:#3a5c9e;
+  --navy:#2d2d2d;
+  --navy-dark:#1a1a1a;
+  --navy-light:#f0efed;
+  --navy-mid:#555555;
   --text:#1a1a1a;
   --muted:#6b6b6b;
   --border:#e8e4de;
@@ -23,18 +23,18 @@
   --transition:0.3s cubic-bezier(0.4,0,0.2,1);
 }
 html.dark{
-  --navy:#4a7fd4;
-  --navy-dark:#1a1a2e;
-  --navy-light:#1e2a3a;
-  --navy-mid:#4a7fd4;
+  --navy:#a0a0a0;
+  --navy-dark:#1a1a1a;
+  --navy-light:#2a2a2a;
+  --navy-mid:#888888;
   --text:#e8e8e8;
   --muted:#9a9a9a;
-  --border:#2a2a3a;
-  --bg:#0f0f17;
-  --card:#1a1a2a;
+  --border:#333333;
+  --bg:#141414;
+  --card:#1e1e1e;
 }
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;display:flex;min-height:100vh}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;display:flex;min-height:100vh}
 
 /* SIDEBAR */
 .sidebar{
@@ -76,7 +76,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 }
 .sidebar.collapsed .sidebar-identity{opacity:0;pointer-events:none;visibility:hidden}
 .sidebar-name{
-  font-family:'DM Serif Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:1.25rem;color:#fff;
   letter-spacing:-0.3px;line-height:1.2;margin-bottom:0.3rem;
 }
@@ -157,7 +157,7 @@ body.collapsed .main{margin-left:var(--sidebar-collapsed)}
   padding:5px 14px;border-radius:99px;margin-bottom:1.75rem;
 }
 h1{
-  font-family:'DM Serif Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:clamp(2.8rem,5vw,4.5rem);
   font-weight:400;line-height:1.08;letter-spacing:-1px;margin-bottom:1.75rem;
 }
@@ -187,8 +187,7 @@ section+section{border-top:1px solid var(--border);padding-top:3.5rem}
   color:var(--navy);font-weight:500;margin-bottom:1.5rem;
   display:flex;align-items:center;gap:10px;
 }
-.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
-h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;letter-spacing:-0.5px;margin-bottom:1.5rem}
+h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;letter-spacing:-0.5px;margin-bottom:1.5rem}
 
 /* ABOUT */
 .about-text p{font-size:15px;color:var(--muted);line-height:1.95}
@@ -196,7 +195,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
 .highlight{background:var(--navy-light);color:var(--navy);padding:2px 7px;border-radius:3px}
 .about-stat{display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
 .stat{display:flex;flex-direction:column}
-.stat-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--navy);line-height:1}
+.stat-num{font-family:'Inter',sans-serif;font-size:2.2rem;color:var(--navy);line-height:1}
 .stat-label{font-size:11px;color:var(--muted);letter-spacing:0.04em;margin-top:4px}
 
 /* PROJECTS */
@@ -334,7 +333,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
 
 <aside class="sidebar" id="sidebar">
   <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
-    <span class="mobile-name" style="font-family:'DM Serif Display',serif;font-size:16px;color:#fff;padding-left:0.25rem;display:none;">Ahmed Elhakim</span>
+    <span class="mobile-name" style="font-family:'Inter',sans-serif;font-size:16px;color:#fff;padding-left:0.25rem;display:none;">Ahmed Elhakim</span>
     <div style="display:flex;align-items:center;gap:0.5rem">
     <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">&#x2630;</button>
     <button id="darkToggleMobile" aria-label="Toggle dark mode" style="background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.5);width:36px;height:36px;border-radius:8px;cursor:pointer;display:none;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;">
@@ -388,7 +387,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
     <div class="reveal">
       <div class="hero-tag"><span class="dot"></span> Available for hire</div>
       <h1>Ahmed<br><em>Elhakim.</em></h1>
-      <p class="hero-sub">Business Informatics graduate from GUC — combining business knowledge with Data Science and AI to build intelligent, data-driven solutions.</p>
+      <p class="hero-sub">Business Informatics graduate from GUC: combining business knowledge with Data Science and AI to build intelligent, data-driven solutions.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">See my work →</a>
         <a href="#contact" class="btn-ghost">Get in touch</a>
@@ -402,7 +401,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
       <div class="section-label">About</div>
       <div class="about-text">
         <p>I recently graduated with a Bachelor's in Business Informatics from the <em class="highlight">German University in Cairo (GUC)</em>, where I studied the intersection of information systems and data-driven decision making.</p>
-        <p>My thesis designed a five-layer AI–ERP integration model and built a working Accounts Payable proof of concept using Python, Google Gemini, and Salesforce — a project that solidified my passion for applying AI to real business problems.</p>
+        <p>My thesis designed a five-layer AI–ERP integration model and built a working Accounts Payable proof of concept using Python, Google Gemini, and Salesforce: a project that solidified my passion for applying AI to real business problems.</p>
         <p>Right now I'm focused on Data Science and AI, while also exploring React for building data-driven interfaces and database design for structuring the systems behind them.</p>
         <div class="about-stat">
           <div class="stat">
@@ -429,7 +428,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
           </div>
           <span style="font-size:12px;color:var(--muted);letter-spacing:0.04em;white-space:nowrap">Jul 2025 – Sep 2025</span>
         </div>
-        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:1rem">Contributed to the design and development of an internal HR system from the ground up — covering employee leave management, overtime tracking, fingerprint reader data integration, and an approval/rejection workflow for employee requests. Built executive dashboards surfacing HR KPIs for leadership.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:1rem">Contributed to the design and development of an internal HR system from the ground up: covering employee leave management, overtime tracking, fingerprint reader data integration, and an approval/rejection workflow for employee requests. Built executive dashboards surfacing HR KPIs for leadership.</p>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem">
           <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--navy);margin-top:2px">→</span>Designed relational database schemas for HR operations including leave cycles, overtime rules, and fingerprint attendance data</li>
           <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--navy);margin-top:2px">→</span>Wrote optimized SQL queries for reporting, data extraction, and supporting business logic in the HR system</li>
@@ -451,7 +450,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
         <div>
           <div class="project-badge">Graduation Project</div>
           <h3>AI–ERP Integration Framework</h3>
-          <p class="project-thesis-title">Designing an AI-ERP Integration Conceptual Model for Automated Accounts Payable, Cash Flow Management, and Procurement — <strong>A+</strong></p>
+          <p class="project-thesis-title">Designing an AI-ERP Integration Conceptual Model for Automated Accounts Payable, Cash Flow Management, and Procurement: <strong>A+</strong></p>
           <p>A five-layer conceptual model for decoupled AI integration in enterprise systems. Working proof of concept for Accounts Payable automation using Google Gemini 2.5 Flash and Salesforce.</p>
           <div class="tags">
             <span class="tag">Python</span>
@@ -466,7 +465,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
       <a href="https://github.com/ahmedelhakimm/Energy-Consumption-Prediction" class="project-card reveal" target="_blank" style="text-decoration:none;color:inherit">
         <div>
           <h3>Energy Consumption Prediction</h3>
-          <p>Linear regression model built to predict energy consumption patterns. Developed as part of a Data Mining course, covering data preprocessing, model training, and evaluation. Achieved an <strong>R² of 0.944</strong> — explaining 94.4% of variance in energy consumption.</p>
+          <p>Linear regression model built to predict energy consumption patterns. Developed as part of a Data Mining course, covering data preprocessing, model training, and evaluation. Achieved an <strong>R² of 0.944</strong>: explaining 94.4% of variance in energy consumption.</p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">Linear Regression</span>
@@ -479,7 +478,7 @@ h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-
       <a href="https://github.com/ahmedelhakimm/AI-Course-Projects" class="project-card reveal" target="_blank" style="text-decoration:none;color:inherit">
         <div>
           <h3>E-Commerce Clickstream Analysis</h3>
-          <p>Two AI models — a Markov Chain and an SVM classifier — built to predict user navigation behavior in an online clothing store. SVM achieved <strong>82.43% accuracy</strong>, nearly doubling the Markov model's performance (~45–50%).</p>
+          <p>Two AI models: a Markov Chain and an SVM classifier: built to predict user navigation behavior in an online clothing store. SVM achieved <strong>82.43% accuracy</strong>, nearly doubling the Markov model's performance (~45–50%).</p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">SVM</span>
