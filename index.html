@@ -34,7 +34,7 @@ html.dark{
   --card:#1e1e1e;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;display:flex;min-height:100vh}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5;display:flex;min-height:100vh}
 
 /* SIDEBAR */
 .sidebar{
@@ -162,7 +162,7 @@ h1{
   font-weight:400;line-height:1.08;letter-spacing:-1px;margin-bottom:1.75rem;
 }
 h1 em{color:var(--navy);font-style:italic}
-.hero-sub{font-size:17px;color:var(--muted);max-width:460px;line-height:1.85;margin-bottom:2.5rem}
+.hero-sub{font-size:17px;color:var(--muted);max-width:460px;line-height:1.5;margin-bottom:2.5rem}
 .hero-actions{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
 .btn-primary{
   display:inline-flex;align-items:center;gap:8px;
@@ -190,7 +190,7 @@ section+section{border-top:1px solid var(--border);padding-top:3.5rem}
 h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;letter-spacing:-0.5px;margin-bottom:1.5rem}
 
 /* ABOUT */
-.about-text p{font-size:15px;color:var(--muted);line-height:1.95}
+.about-text p{font-size:15px;color:var(--muted);line-height:1.55}
 .about-text p+p{margin-top:1.1rem}
 .highlight{background:var(--navy-light);color:var(--navy);padding:2px 7px;border-radius:3px}
 .about-stat{display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
@@ -221,7 +221,7 @@ h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight
 }
 .project-card h3{font-size:16px;font-weight:500;margin-bottom:0.2rem;line-height:1.3}
 .project-thesis-title{font-size:12px;color:var(--navy);font-style:italic;margin-bottom:0.5rem}
-.project-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.project-card p{font-size:13px;color:var(--muted);line-height:1.5}
 .project-arrow{
   width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);
   display:flex;align-items:center;justify-content:center;
@@ -253,7 +253,7 @@ h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight
 .skill-group li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--navy-mid);flex-shrink:0}
 
 /* CONTACT */
-.contact-intro{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:2rem;max-width:420px}
+.contact-intro{font-size:15px;color:var(--muted);line-height:1.5;margin-bottom:2rem;max-width:420px}
 .contact-links{display:flex;flex-direction:column;gap:0.75rem}
 .contact-link{
   display:flex;align-items:center;gap:14px;text-decoration:none;
@@ -389,9 +389,9 @@ h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight
       <h1>Ahmed<br><em>Elhakim.</em></h1>
       <p class="hero-sub">Business Informatics graduate from GUC: combining business knowledge with Data Science and AI to build intelligent, data-driven solutions.</p>
       <div class="hero-actions">
-        <a href="#projects" class="btn-primary">See my work →</a>
+        <a href="#projects" class="btn-primary">See my work <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <a href="#contact" class="btn-ghost">Get in touch</a>
-        <a href="https://raw.githubusercontent.com/ahmedelhakimm/ahmedelhakimm.github.io/main/Ahmed%20Elhakim%20Resume%202026.pdf" target="_blank" download class="btn-ghost">Download CV ↓</a>
+        <a href="https://raw.githubusercontent.com/ahmedelhakimm/ahmedelhakimm.github.io/main/Ahmed%20Elhakim%20Resume%202026.pdf" target="_blank" download class="btn-ghost">Download CV <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
       </div>
     </div>
   </section>
@@ -428,11 +428,11 @@ h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight
           </div>
           <span style="font-size:12px;color:var(--muted);letter-spacing:0.04em;white-space:nowrap">Jul 2025 – Sep 2025</span>
         </div>
-        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:1rem">Contributed to the design and development of an internal HR system from the ground up: covering employee leave management, overtime tracking, fingerprint reader data integration, and an approval/rejection workflow for employee requests. Built executive dashboards surfacing HR KPIs for leadership.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:1rem">Contributed to the design and development of an internal HR system from the ground up: covering employee leave management, overtime tracking, fingerprint reader data integration, and an approval/rejection workflow for employee requests. Built executive dashboards surfacing HR KPIs for leadership.</p>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem">
-          <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--navy);margin-top:2px">→</span>Designed relational database schemas for HR operations including leave cycles, overtime rules, and fingerprint attendance data</li>
-          <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--navy);margin-top:2px">→</span>Wrote optimized SQL queries for reporting, data extraction, and supporting business logic in the HR system</li>
-          <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--navy);margin-top:2px">→</span>Developed Power BI dashboards to visualize KPIs and HR metrics for executive reporting</li>
+          <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:3px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Designed relational database schemas for HR operations including leave cycles, overtime rules, and fingerprint attendance data</li>
+          <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:3px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Wrote optimized SQL queries for reporting, data extraction, and supporting business logic in the HR system</li>
+          <li style="font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:3px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Developed Power BI dashboards to visualize KPIs and HR metrics for executive reporting</li>
         </ul>
         <div class="tags">
           <span class="tag">SQL</span>
@@ -460,7 +460,7 @@ h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight
           </div>
           <a href="https://raw.githubusercontent.com/ahmedelhakimm/ahmedelhakimm.github.io/main/Bachelor%20Thesis%20Document.pdf" target="_blank" download onclick="event.stopPropagation()" class="read-thesis">Read thesis</a>
         </div>
-        <div class="project-arrow">&#x2197;&#xFE0E;</div>
+        <div class="project-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
       </div>
       <a href="https://github.com/ahmedelhakimm/Energy-Consumption-Prediction" class="project-card reveal" target="_blank" style="text-decoration:none;color:inherit">
         <div>
@@ -473,7 +473,7 @@ h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight
             <span class="tag">Jupyter</span>
           </div>
         </div>
-        <div class="project-arrow">&#x2197;&#xFE0E;</div>
+        <div class="project-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
       </a>
       <a href="https://github.com/ahmedelhakimm/AI-Course-Projects" class="project-card reveal" target="_blank" style="text-decoration:none;color:inherit">
         <div>
@@ -487,7 +487,7 @@ h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight
             <span class="tag">Kaggle</span>
           </div>
         </div>
-        <div class="project-arrow">&#x2197;&#xFE0E;</div>
+        <div class="project-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
       </a>
     </div>
   </section>
