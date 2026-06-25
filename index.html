@@ -413,9 +413,9 @@ h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight
             <span class="stat-num">A+</span>
             <span class="stat-label">Thesis grade</span>
           </div>
-          <div class="stat" style="align-items:center">
-            <img src="https://raw.githubusercontent.com/ahmedelhakimm/ahmedelhakimm.github.io/main/20240821000231!German_University_in_Cairo_logo.png" alt="GUC" style="height:44px;width:auto;filter:grayscale(100%);opacity:0.7;object-fit:contain;display:block;"/>
-            <span class="stat-label" style="margin-top:4px;text-align:center;">Class of 2026</span>
+          <div class="stat" style="align-items:flex-start;display:inline-flex;flex-direction:column;">
+            <img id="gucLogo" src="https://raw.githubusercontent.com/ahmedelhakimm/ahmedelhakimm.github.io/main/20240821000231!German_University_in_Cairo_logo.png" alt="GUC" style="height:44px;width:auto;filter:grayscale(100%);opacity:0.7;object-fit:contain;display:block;"/>
+            <span class="stat-label" id="gucLabel" style="margin-top:4px;">Class of 2026</span>
           </div>
         </div>
       </div>
@@ -601,6 +601,19 @@ sidebarNav.querySelectorAll('a').forEach(a => {
     }
   });
 });
+
+const gucLogo = document.getElementById('gucLogo');
+const gucLabel = document.getElementById('gucLabel');
+if (gucLogo && gucLabel) {
+  gucLogo.addEventListener('load', () => {
+    gucLabel.style.width = gucLogo.offsetWidth + 'px';
+    gucLabel.style.textAlign = 'center';
+  });
+  if (gucLogo.complete) {
+    gucLabel.style.width = gucLogo.offsetWidth + 'px';
+    gucLabel.style.textAlign = 'center';
+  }
+}
 
 document.querySelector('.mobile-name').addEventListener('click', () => {
   sidebarNav.classList.remove('open');
