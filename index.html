@@ -333,7 +333,7 @@ h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight
 
 <aside class="sidebar" id="sidebar">
   <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
-    <span class="mobile-name" style="font-family:'Inter',sans-serif;font-size:16px;color:#fff;padding-left:0.25rem;display:none;">Ahmed Elhakim</span>
+    <a href="#home" class="mobile-name" style="font-family:'Inter',sans-serif;font-size:16px;color:#fff;padding-left:0.25rem;display:none;text-decoration:none;">Ahmed Elhakim</a>
     <div style="display:flex;align-items:center;gap:0.5rem">
     <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">&#x2630;</button>
     <button id="darkToggleMobile" aria-label="Toggle dark mode" style="background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.5);width:36px;height:36px;border-radius:8px;cursor:pointer;display:none;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;">
@@ -595,6 +595,11 @@ sidebarNav.querySelectorAll('a').forEach(a => {
       toggleBtn.innerHTML = '&#x2630;';
     }
   });
+});
+
+document.querySelector('.mobile-name').addEventListener('click', () => {
+  sidebarNav.classList.remove('open');
+  toggleBtn.innerHTML = '&#x2630;';
 });
 
 const observer = new IntersectionObserver((entries) => {
